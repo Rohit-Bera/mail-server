@@ -32,7 +32,7 @@ app.post("/sentMail", async (request, response) => {
     var mailOptions = {
       from: email,
       to: process.env.ADMIN,
-      subject: subject,
+      subject: subject ? subject : "",
       html: ` from ${email} <br>.<br> <p> ${message} </p>`,
     };
 
